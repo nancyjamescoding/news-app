@@ -1,0 +1,15 @@
+<h3> Articles from {{ source_name }}</h3>
+   <ul>
+      {% for article in articles %}
+          <div style="width: 100%; margin-bottom: 20px;">
+            <p>{{ article.title }}</p>
+            <p> {{ article.description}}</p>
+            <img src={{ article.url_to_image}} style="height: 300px; width: 400px;"/>
+            <p>{{article.published_at}}</p>
+            <a href="{{article.url}}" target="_blank" rel="noopener noreferrer"> {{ article.url }} </a>
+          </div>
+      {% endfor %}
+  </ul>
+
+
+  <!-- background-color: blueviolet -->
