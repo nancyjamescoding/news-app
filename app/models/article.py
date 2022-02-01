@@ -1,6 +1,3 @@
-from turtle import tiltangle
-
-
 class Article:
     def __init__(self, title, description, url_to_image, published_at, url, content):
         self.title =  title
