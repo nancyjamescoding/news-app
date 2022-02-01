@@ -4,7 +4,6 @@ from turtle import title
 from unicodedata import name
 from app import app
 from urllib import request, parse
-
 from .models import source, article
 
 Source = source.Source
