@@ -15,14 +15,13 @@
 <body>  
 <div>
     <div class="header">
-   <h1>{{ message }}</h1>
-   <!-- Popular news section  -->
-   <h3> Popular News</h3>
+   <h3>{{ message }}</h3>
     </div>
    <div class="container">
       {% for news_source in news_sources %}
           <div class="card">
             <a href="/news/{{ news_source.id}}" target="_blank" rel="noopener noreferrer"> {{ news_source.name}} </a>
+            <p>Description: {{ news_source.description }}</p>
           </div>
       {% endfor %}
     </div>

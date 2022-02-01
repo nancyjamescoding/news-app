@@ -46,8 +46,9 @@ def process_sources(sources_list):
         id = news_source['id']
         name = news_source['name']
         url = news_source["url"]
+        description = news_source["description"]
 
-        news_source_object = Source(id,name, url)
+        news_source_object = Source(id,name, url,description)
         sources_results.append(news_source_object)
 
     return sources_results 
