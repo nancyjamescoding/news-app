@@ -1,7 +1,8 @@
 from distutils import extension
 from ensurepip import bootstrap
 from flask import Flask
-from config import devConfig
+from app.request import configure_request
+from config import DevConfig
 from flask_bootstrap import Bootstrap
 from config import config_options
 
@@ -30,4 +31,5 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
 
 
+    configure_request(app)
     return app

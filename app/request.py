@@ -2,7 +2,6 @@ import json
 from tkinter import Image
 from turtle import title
 from unicodedata import name
-from app import app
 from urllib import request, parse
 from .models import source, article
 
@@ -10,9 +9,14 @@ Source = source.Source
 Article = article.Article
 
 #getting API key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 # Getting the movie base url
-base_url = app.config["NEWS_API_BASE_URL"]
+base_url = None
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+
 
 def get_news_sources():
     '''

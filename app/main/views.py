@@ -1,11 +1,11 @@
 from email.message import Message
-from flask import render_template
-from app import app
+from flask import render_template,redirect, url_for
+from . import main
 from app.models import article, source
-from request import get_news_sources, select_news_sources
+from ..request import get_news_sources, select_news_sources
 
 #views
-@app.route('/')
+@main.route('/')
 def index():
     '''
     view root page function that returns the index page and its data
@@ -21,7 +21,7 @@ def index():
     title = 'Home - Welcome to The best Movie Review Website Online'
     return render_template('index.html', title = title, message = message, news_sources = news_sources, upcoming = upcoming_news, now_showing = now_showing_news )
 
-@app.route('/news/<string:source_name>')
+@main.route('/news/<string:source_name>')
 def get_articles_per_source(source_name):
     '''
      View movie page function that returns the movie details page and its data
