@@ -12,14 +12,10 @@ def index():
     '''
     message = "My News App"
     title = 'Home - Welcome to The best Movie Review Website Online'
-      # Getting new sources
+    # Getting new sources
     news_sources = get_news_sources()
-    # upcoming_news = get_news('upcoming')
-    upcoming_news = []
-    # now_showing_news = get_news('now_playing')
-    now_showing_news = []
     title = 'Home - Welcome to The best Movie Review Website Online'
-    return render_template('index.html', title = title, message = message, news_sources = news_sources, upcoming = upcoming_news, now_showing = now_showing_news )
+    return render_template('index.html', title = title, message = message, news_sources = news_sources)
 
 @main.route('/news/<string:source_name>')
 def get_articles_per_source(source_name):
